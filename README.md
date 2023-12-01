@@ -8,8 +8,7 @@
   - `PORT=3000`
 - Inside `src/config` create a new file `config.json` and then add the following piece of json.
 
-```
-
+```JSON
  {
   "development": {
     "username": "your_db_login_name",
@@ -19,8 +18,9 @@
     "dialect": "mysql"
   },
   }
-  
 ```
 
+- Once you have done all the above specified steps go to `src` folder from your `Terminal` and
+  execute `npx sequelize db:create`.
 
 
