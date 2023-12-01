@@ -1,28 +1,26 @@
-# INSTRUCTIONS
+# Welcome to Flight Services
 
-## Role Based
+## Project Setup
 
--SRC/
- -index.js [server]
- -models/
- -controllers/
- -middlewares/
- -Services/
- -Utils/
- -Config/
- -Repository/
--Tests/[later]
--Static/
--Temp/
+-Clone the project on your local
+-Execute npm install on the same path of the root directory in which you are cloing the project.
+-Create a .env file and create the following variables
+   -PORT=3000
+-Inside src/config create a new file config.json and then add the following piece of json.
 
-## In feature Based
+```
 
-Each Feature Has its own models ,controllers ,etc folders.
--Search/
- -models/
- -controllers/
- -middlewares/
--flights/
- -models/
- -controllers/
- -middlewares/
+ {
+  "development": {
+    "username": "your_db_login_name",
+    "password": "YourPassword",
+    "database": "Flights_Search_DB_DEV",
+    "host": "127.0.0.1", 
+    "dialect": "mysql"
+  },
+  }
+  
+```
+
+
+
