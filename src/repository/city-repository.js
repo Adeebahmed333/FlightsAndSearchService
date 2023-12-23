@@ -2,29 +2,53 @@ const {City} =require('../models/index');
 
 class CityRepository{
 
-    async createCity({name})
-    {
-        try{
-            console.log("city created");
-          const city = await City.create({name});
-          return city; 
-        }catch(error){
-          console.log("error"); 
+    async createCity({name}){
+        try {
+            const city=City.create({
+                city
+            });
+            return city;
+        } catch (error) {
+            console.log("Something Went Wrong In repo Layer Code:99");
+            //throw{error};
         }
-    }
+    };
 
-    async deleteCity({cityid})
-    {
+    async deleteCity(cityId){
         try {
             await City.destroy({
-                where:{
-                   id: cityid
-                } 
-            }); 
+              where:{
+                id: cityId
+              }
+            });
+            return true;
         } catch (error) {
-           // throw {error};
+            console.log("Something Went Wrong In repo Layer Code:999");
         }
-    }
+    };
+
+    async updateCity(cityId,data){
+        try {
+            const city= await City.update(data,{
+                where:{
+                    id:cityId
+                }
+            });
+            return city;
+        } catch (error) {
+            console.log("Something Went Wrong In repo Layer Code:9999");
+        }
+    };
+
+    async getCity(cityId){
+        try {
+            const city= await City.findByPk(cityId); 
+            return city;
+        } catch (error) {
+            console.log("Something Went Wrong In repo Layer Code:99999");
+        }
+    };
+   
 }
 
 module.exports = CityRepository;

@@ -8,9 +8,9 @@ const SetupAndStartServer= async()=>
   app.use(express.json());
   app.listen(PORT,async()=>
   {
-   console.log(`Server Started at PORT ${PORT} `);
+   console.log(`Server Started at PORT ${PORT}`);
    const repo=new CityRepository();
-   repo.createCity({name :"New Delhi"});
+
   });
 
 }
