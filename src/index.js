@@ -1,6 +1,6 @@
 const express =require("express");
 const {PORT} =require('./config/ServerConfig');  
-const CityRepository =require('./repository/city-repository');
+const APIroutes=require('./routes/index');
 const SetupAndStartServer= async()=>
 {
   //createing the express object
@@ -9,7 +9,8 @@ const SetupAndStartServer= async()=>
   app.listen(PORT,async()=>
   {
    console.log(`Server Started at PORT ${PORT}`);
-   const repo=new CityRepository();
+
+   app.use('/api',APIroutes);
 
   });
 

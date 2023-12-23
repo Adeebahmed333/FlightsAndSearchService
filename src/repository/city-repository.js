@@ -5,7 +5,7 @@ class CityRepository{
     async createCity({name}){
         try {
             const city=City.create({
-                city
+                name
             });
             return city;
         } catch (error) {

@@ -12,6 +12,7 @@ class CityService {
         return city;
      } catch (error){
         console.log("Something Went Wrong In Service Layer");
+        console.log(error);
      }
   }
 
