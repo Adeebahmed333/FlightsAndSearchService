@@ -29,7 +29,7 @@ class CityService {
   async getCity(cityId,data)
   {
     try {
-        const city=await this.cityRepository.updateCity(cityid,data);
+        const city=await this.cityRepository.getCity(cityId,data);
         return city;
     } catch (error) {
        console.log("Something Went Wrong In Service Layer");
@@ -38,7 +38,7 @@ class CityService {
   async updateCity(cityId)
   {
     try {
-        const city=await this.cityRepository.getCity(cityId);
+        const city=await this.cityRepository.updateCity(cityId);
         return city;
     } catch (error) {
        console.log("Something Went Wrong In Service Layer");
