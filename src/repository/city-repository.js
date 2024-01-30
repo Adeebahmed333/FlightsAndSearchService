@@ -29,11 +29,17 @@ class CityRepository{
 
     async updateCity(cityId,data){
         try {
-            const city= await City.update(data,{
-                where:{
-                    id:cityId
-                }
-            });
+            //this approach also works but will not return updated object 
+            // const city= await City.update(data,{
+            //     where:{
+            //         id:cityId
+            //     }
+            // });
+            //if you want the updated object you can use this approach
+            //if we are using postgres sql then returning:true property can be used
+            const city=await City.findByPk(cityId);
+            city.name=data.name;
+            await city.save();
             return city;
         } catch (error) {
             console.log("Something Went Wrong In repo Layer Code:9999");
