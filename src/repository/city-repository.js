@@ -1,5 +1,5 @@
 const {City} =require('../models/index');
-
+ const {Op}=require('sequelize');
 class CityRepository{
 
     async createCity({name}){
@@ -55,13 +55,25 @@ class CityRepository{
         }
     };
 
-    async getAllCities()
+    async getAllCities(filter)//filter can be empty if so then we return all cities
     {
         try {
+            if(filter.name)
+            {
+              const cities=await City.findAll({
+                where:{
+                    name:{
+                        [Op.startsWith]:filter.name
+                    }
+                }
+              });
+              return cities;
+            }
             const cities =City.findAll();
             return cities;
         } catch (error) {
-            console.log("Something Went Wrong In repo Layer Code:99999");   
+            console.log("Something Went Wrong In repo Layer Code:99999");  
+            throw{error}; 
         }
     }
    
