@@ -54,6 +54,16 @@ class CityRepository{
             console.log("Something Went Wrong In repo Layer Code:99999");
         }
     };
+
+    async getAllCities()
+    {
+        try {
+            const cities =City.findAll();
+            return cities;
+        } catch (error) {
+            console.log("Something Went Wrong In repo Layer Code:99999");   
+        }
+    }
    
 }
 
