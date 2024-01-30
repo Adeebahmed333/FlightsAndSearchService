@@ -37,3 +37,11 @@
 ## Flights table
 
 - id - unique id for identifying flights.
+
+## Tables
+
+### City-> id,name,created at,updated at
+
+### Airport->id,name,address,city id,created at,updated at
+
+  Relationship->City has many airports and many airports has a single city (one->many)
