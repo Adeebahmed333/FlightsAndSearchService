@@ -45,3 +45,8 @@
 ### Airport->id,name,address,city id,created at,updated at
 
   Relationship->City has many airports and many airports has a single city (one->many)
+
+```node
+npx sequelize model:generate --name Airport --attributes name:String,address:string,cityId:integer
+npx sequelize db:migrate
+```
