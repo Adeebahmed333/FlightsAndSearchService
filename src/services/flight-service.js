@@ -26,9 +26,16 @@ class FlightService
      }
     }
 
-    async getFlightsData()
+    async getFlightsData(data)
     {
-      //todo
+      try {
+         const flights=await this.flightrepository.getAllFlights(data);
+         return flights;
+      } catch (error) {
+         console.log(error);
+        console.log("Something Went Wrong In service Layer Code:99");
+      }
+      
     }
     
 }
