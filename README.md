@@ -1,4 +1,4 @@
-# Welcome to Flight Services
+# Welcome to Flight MicroService
 
 ## Project Setup
 
