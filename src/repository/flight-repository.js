@@ -66,5 +66,20 @@ class FlightRepository
          console.log("Something Went Wrong In repo Layer Code:99");
       }
     }
+    async updateFlight(flightId,data)
+    {
+      try {
+         await Flights.update(data,{
+             where:{
+                 id:flightId
+             }
+         });
+         return true;
+        } catch (error) {
+         console.log(error);
+         console.log("Something Went Wrong In repo Layer Code:99");
+        }
+
+    }
 }
 module.exports =FlightRepository;

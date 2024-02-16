@@ -49,6 +49,17 @@ class FlightService
         console.log("Something Went Wrong In service Layer Code:99");
       }
     }
+    async updateFlight(flightId,data)
+    {
+      try {
+         const response=await this.flightrepository.updateFlight(flightId,data);
+         return response;
+         
+      } catch (error) {
+         console.log(error);
+        console.log("Something Went Wrong In service Layer Code:99");
+      }
+    }
     
 }
 module.exports=FlightService;
