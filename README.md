@@ -14,7 +14,7 @@
     "username": "your_db_login_name",
     "password": "YourPassword",
     "database": "Flights_Search_DB_DEV",
-    "host": "127.0.0.1", 
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   }
@@ -44,7 +44,7 @@
 
 ### Airport->id,name,address,city id,created at,updated at
 
-  Relationship->City has many airports and many airports has a single city (one->many)
+Relationship->City has many airports and many airports has a single city (one->many)
 
 ```node
 npx sequelize model:generate --name Airport --attributes name:String,address:string,cityId:integer

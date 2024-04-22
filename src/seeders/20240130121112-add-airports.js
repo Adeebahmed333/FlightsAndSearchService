@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
      *
@@ -11,37 +11,39 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
-   await queryInterface.bulkInsert('Airports',[{
-    name:'Chennai International Airport',
-    cityId:10,
-    createdAt: new Date(),
-    updatedAt:new Date()
-    
-   },
-   {
-    name:' Mumbai International Airport',
-    cityId:3,
-    createdAt: new Date(),
-    updatedAt:new Date()
-   },
-   {
-    name:' Bangaluru International Airport',
-    cityId:4,
-    createdAt: new Date(),
-    updatedAt:new Date()
-   }
-
-   ],{}
-   );
+     */
+    await queryInterface.bulkInsert(
+      "Airports",
+      [
+        {
+          name: "Chennai International Airport",
+          cityId: 10,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: " Mumbai International Airport",
+          cityId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: " Bangaluru International Airport",
+          cityId: 4,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };
